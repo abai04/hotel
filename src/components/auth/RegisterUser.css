@@ -1,0 +1,8 @@
+.register-block{
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgb(236, 232, 232);
+    border: 2px solid rgb(17, 155, 33);
+    border-radius: 10px;
+}
