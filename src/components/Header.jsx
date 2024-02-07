@@ -15,7 +15,7 @@ function Header({rus, setRus}) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={() => navigate("/register")} href="#reg">{rus ? "Регистрация" : "Sign up"}</Nav.Link>
+            <Nav.Link onClick={() => navigate("/register")}>{rus ? "Регистрация" : "Sign up"}</Nav.Link>
             <Nav.Link onClick={() => navigate("/login")} href="#log">{rus ? "Вход" : "Log in"}</Nav.Link>
             <Nav.Link href="#link">{rus ? "Ссылка" : "Link"}</Nav.Link>
             <Button onClick={() => setRus(!rus)}>{rus ? "Eng" : "Rus"}</Button>

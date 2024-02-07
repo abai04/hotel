@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { register } from "../actions/authActions";
+import { login, register } from "../actions/authActions";
 
 const initialState = {
+    currentUser: localStorage.getItem('email'),
     error: null, 
     loading: false,
 }
@@ -19,6 +20,17 @@ export const authSlice = createSlice({
             state.loading = false
         })
         .addCase(register.rejected, (state, action) => {
+            state.loading = false
+            state.error = action.error.message
+        })
+        .addCase(login.pending, (state, action) => {
+            state.loading = true
+        })
+        .addCase(login.fulfilled, (state, action) => {
+            state.loading = false
+            state.currentUser = action.payload
+        })
+        .addCase(login.rejected, (state, action) => {
             state.loading = false
             state.error = action.error.message
         })

@@ -23,22 +23,23 @@ function RegisterUser({rus, setRus}) {
     }
     function click(){
         dispatch(register(user))
+        console.log("sadas");
     }
   return (
     <div className='register-block'> 
     <h2>{rus ? "Регистрация" : "Registration"}</h2>
     <hr />
     <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3">
         <Form.Label>{rus ? "Имя" : "First name"}</Form.Label>
         <Form.Control onChange={(e) => setFirstName(e.target.value)} type="text" placeholder={rus ? "Введите имя" : "Enter your e-mail"} />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" >
         <Form.Label>{rus ? "Фамилия" : "Login"}</Form.Label>
         <Form.Control onChange={(e) => setLastName(e.target.value)} type="text" placeholder={rus ? "Введите фамилию" : "Enter your e-mail"} />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>{rus ? "Номер" : "Login"}</Form.Label>
+      <Form.Group className="mb-3" >
+        <Form.Label>{rus ? "Номер" : "Phone number"}</Form.Label>
         <Form.Control onChange={(e) => setPhoneNumber(e.target.value)} type="text" placeholder={rus ? "Введите номер" : "Enter your e-mail"} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -51,11 +52,11 @@ function RegisterUser({rus, setRus}) {
         <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" placeholder={rus ? "Придумайте пароль" : "Enter new password"} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>{rus ? "Подтверждение пароля" : "Password"}</Form.Label>
+        <Form.Label>{rus ? "Подтверждение пароля" : "Password confirm"}</Form.Label>
         <Form.Control onChange={(e) => setPasswordConfirm(e.target.value)} type="password" placeholder={rus ? "Подтвердите пароль" : "Confirm password"} />
       </Form.Group>
       
-      <Button onClick={click} variant="success" type="submit">
+      <Button onClick={click} variant="success">
         {rus ? "Отправить" : "Submit"}
       </Button>
     </Form>
